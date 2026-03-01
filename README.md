@@ -31,6 +31,7 @@ Most awesome lists organize by tool category. This one organizes by **SDLC phase
 - [SDLC Phase: Development](#sdlc-phase-development)
   - [Code Generation & Completion](#code-generation--completion)
   - [Agentic Coding](#agentic-coding)
+  - [Agentic Coding Failure Modes](#agentic-coding-failure-modes)
   - [Code Review & Quality](#code-review--quality)
   - [Refactoring & Migration](#refactoring--migration)
 - [SDLC Phase: Testing & QA](#sdlc-phase-testing--qa)
@@ -76,6 +77,7 @@ Most awesome lists organize by tool category. This one organizes by **SDLC phase
 - 🟡 `[2025-12]` [DORA 2025 AI Capabilities Model](https://services.google.com/fh/files/misc/2025_dora_ai_capabilities_model.pdf) - 7 organizational capabilities for AI success. 25% more AI adoption → 7.2% drop in delivery stability.
 - 🟡 `[2025-01]` [Bain 2025 Technology Report](https://www.bain.com/insights/technology-report-2025/) - 25-30% engineering productivity with full SDLC AI adoption; most orgs see only 5-15%.
 - 🔵 `[2026-02]` [ThoughtWorks Future of Software Development Retreat](https://www.thoughtworks.com/content/dam/thoughtworks/documents/report/tw_future%20_of_software_development_retreat_%20key_takeaways.pdf) - 10 themes from senior practitioners including Middle Loop, risk tiering, TDD as prompt engineering.
+- 🔵 `[2026-02]` [Pragmatic Engineer Summit: 6 Predictions for Future of SE](https://newsletter.pragmaticengineer.com/p/the-future-of-software-engineering-with-ai) - Gergely Orosz hosts Laura Tacho, Thomas Dohmke (ex-GitHub CEO), Rajeev Rajan (Atlassian CTO). Some Atlassian teams write zero hand-written code — all agent-orchestrated, 2-5x output.
 
 ### Productivity Paradoxes & Measurement
 
@@ -85,6 +87,8 @@ Most awesome lists organize by tool category. This one organizes by **SDLC phase
 - 🟢 `[2026-02]` [FORGE '26: GenAI Impact on Agile Teams (13-month longitudinal)](https://arxiv.org/html/2602.13766v1) - Performance ↑ and Efficiency ↑ while Activity stays flat. AI increases value density, not volume.
 - 🟡 `[2025-11]` [Harness: The AI Velocity Paradox](https://www.harness.io/) - 67% of teams report "balloon effect" — faster coding inflates downstream bottlenecks.
 - 🔵 `[2025-10]` [Logilica: The Shifting Bottleneck](https://www.logilica.com/) - 77% of merges still require human decision-making.
+- 🟡 `[2026-02]` [Faros AI Field Study: 91% PR Review Time Increase](https://medium.com/@fernando.garcia.varela/ai-coding-taming-the-new-pet-4e85bb2c0967) - 10K+ devs, 1,255 teams: +21% tasks, +98% PRs merged, but +91% review time, +9% bugs/dev, +154% PR size. Bottleneck moved downstream.
+- 🟢 `[2026-02]` [Russinovich & Hanselman: Redefining Software Engineering for AI (ACM)](https://dl.acm.org/doi/10.1145/3779312) - Microsoft Azure CTO + VP: AI gives seniors "boost" and juniors "drag." Agents exhibit intern-like behaviors (thread.sleep for race conditions, hiding crashes).
 
 ### Organizational Impact
 
@@ -92,6 +96,8 @@ Most awesome lists organize by tool category. This one organizes by **SDLC phase
 - 🔵 `[2026-02]` [Karpathy: Programming "Unrecognizable" Since December](https://x.com/karpathy/status/2026731645169185220) - AI agents crossed from unreliable to functional in Dec 2025. Weekend projects → 30 minutes.
 - 🔵 `[2026-02]` [Forrester: Takeaways from Future of Software Retreat](https://www.forrester.com/blogs/takeaways-from-the-future-of-software-development-retreat-just-because-you-can-doesnt-mean-youre-ready-to/) - "Just because you can doesn't mean you should." Mid-career engineers at most risk.
 - 🟡 `[2025-02]` [Dan Shapiro: 5 Levels of AI Coding](https://danshapiro.com/) - L0 (manual) → L5 (dark factory). StrongDM operates at L4.
+- 🟢 `[2026-02]` [Harvard: Junior Employment Declines at AI-Adopting Firms](https://papers.ssrn.com/sol3/papers.cfm?abstract_id=5425555) - Junior hiring drops sharply at firms adopting AI; senior employment unchanged. Referenced by Microsoft ACM paper.
+- 🔵 `[2026-02]` [Pragmatic Summit: Mid-Level Engineers' Quiet Crisis](https://newsletter.pragmaticengineer.com/p/the-future-of-software-engineering-with-ai) - Eng leaders discuss behind closed doors: juniors adapt faster to AI, seniors have experience, mid-levels squeezed from both sides.
 
 ---
 
@@ -147,6 +153,15 @@ Most awesome lists organize by tool category. This one organizes by **SDLC phase
 - 🔵 `[2026-02]` [Anthropic: Building a C Compiler with Vibe Coding](https://www.anthropic.com/engineering/building-c-compiler) - Case study of AI agent building a working C compiler.
 - 🟠 `[2026-02]` [Steve Yegge: Welcome to Gas Town](https://steve-yegge.medium.com/welcome-to-gas-town-4f25ee16dd04) - When appgen engines run circles around dev squads, what's left?
 
+### Agentic Coding Failure Modes
+
+*Novel failure patterns unique to AI-assisted development that didn't exist before.*
+
+- 🔵 `[2026-02]` [Parallel AI Sessions: "Quantum State" Bugs](https://medium.com/@fernando.garcia.varela/ai-coding-taming-the-new-pet-4e85bb2c0967) - Multiple AI sessions on same codebase create internally consistent but mutually contradictory changes. Code integrates cleanly but behaves incorrectly.
+- 🔵 `[2026-02]` [Architectural Drift & Non-Serializable Cognitive Commits](https://medium.com/@fernando.garcia.varela/ai-coding-taming-the-new-pet-4e85bb2c0967) - AI's reasoning vanishes when session ends. Micro-decisions across stateless sessions silently reverse architecture established in earlier sessions.
+- 🔵 `[2026-02]` [Context Window Collapse](https://medium.com/@fernando.garcia.varela/ai-coding-taming-the-new-pet-4e85bb2c0967) - In long sessions, specs from early exchanges become effectively invisible. Idempotency requirements forgotten by completion time.
+- 🟢 `[2026-02]` [Microsoft ACM: Agent Intern-Like Behaviors](https://dl.acm.org/doi/10.1145/3779312) - Agents insert thread.sleep() for race conditions, dismiss crashes, leave debug code, make code work for specific tests but not generally.
+
 ### Code Review & Quality
 
 *AI-assisted code review, quality gates, and automated feedback.*
@@ -154,6 +169,7 @@ Most awesome lists organize by tool category. This one organizes by **SDLC phase
 - [CodeRabbit](https://coderabbit.ai) - AI code review for pull requests.
 - [Pixee](https://pixee.ai) - Finds security and quality issues, opens merge-ready PRs.
 - 🔵 `[2026-02]` [ThoughtWorks: Code Review Is Being Unbundled](https://www.thoughtworks.com/content/dam/thoughtworks/documents/report/tw_future%20_of_software_development_retreat_%20key_takeaways.pdf) - Four functions of code review (mentorship, consistency, correctness, trust) each need a new home.
+- 🟡 `[2026-02]` [Faros AI: PR Review Time +91% at Scale](https://medium.com/@fernando.garcia.varela/ai-coding-taming-the-new-pet-4e85bb2c0967) - AI-generated PRs are 154% larger on average. Review becomes the new bottleneck.
 
 ### Refactoring & Migration
 
@@ -253,6 +269,7 @@ Most awesome lists organize by tool category. This one organizes by **SDLC phase
 *AI-related risks in software supply chains and dependency management.*
 
 - 🟢 `[2026-01]` [Vibe Coding Kills Open Source](https://arxiv.org/abs/2601.15494) - AI agents selecting libraries without human engagement threatens OSS maintainer sustainability.
+- 🟡 `[2026-02]` [Synopsys OSSRA 2026: OSS Components Per App +30%](https://devops.com/ai-fueled-development-pushes-open-source-risk-to-extremes-report/) - OSS in 98% of audited apps. AI agents pulling in more dependencies, expanding attack surface.
 
 ---
 
@@ -290,6 +307,8 @@ Most awesome lists organize by tool category. This one organizes by **SDLC phase
 - 🟢 `[2026-01]` [Anthropic: How AI Impacts Skill Formation](https://arxiv.org/abs/2601.20245) - AI assistance reduces comprehension by 17%. Delegation hurts; conceptual questioning preserves learning.
 - 🟢 `[2024-05]` [University of Maribor: LLM Use and Student Performance](https://www.mdpi.com/2076-3417/14/10/4115) - 10-week RCT: LLM use for code generation correlates negatively with grades; explanations do not.
 - 🔵 `[2026-02]` [ThoughtWorks: Juniors More Valuable, Not Less](https://www.thoughtworks.com/content/dam/thoughtworks/documents/report/tw_future%20_of_software_development_retreat_%20key_takeaways.pdf) - AI gets juniors past net-negative phase faster. Real risk is mid-level engineers.
+- 🟢 `[2026-02]` [Russinovich & Hanselman: Preceptor-Based Organizations (ACM)](https://dl.acm.org/doi/10.1145/3779312) - Senior engineers must explicitly mentor juniors to preserve skills pipeline. Universities need classes where AI use is "cheating."
+- 🔵 `[2026-02]` [Pragmatic Summit: Atlassian CTO Bought Personal Laptop](https://newsletter.pragmaticengineer.com/p/the-future-of-software-engineering-with-ai) - Corporate IT blocks Claude Code. CTOs run agents on personal devices at night, then mandate org-wide rollout. XP practices making comeback.
 
 ### Team Topologies & Agent Topologies
 
@@ -308,6 +327,9 @@ Most awesome lists organize by tool category. This one organizes by **SDLC phase
 - 🟢 `[2026-01]` [CSH/Science: Only Senior Devs See Productivity Gains](https://www.science.org/doi/10.1126/science.adz9311) - Juniors use AI 37% more but gain nothing. AI is a skill amplifier, not equalizer.
 - 🔵 `[2026-02]` [Forrester: Mid-Career Engineers at Most Risk](https://www.forrester.com/blogs/takeaways-from-the-future-of-software-development-retreat-just-because-you-can-doesnt-mean-youre-ready-to/) - "It's the mid-career engineers energized by the joy of coding that we realized are in trouble."
 - 🟠 `[2026-02]` [ThoughtWorks: PM & Developer Roles Converging](https://www.thoughtworks.com/content/dam/thoughtworks/documents/report/tw_future%20_of_software_development_retreat_%20key_takeaways.pdf) - Nobody can define PM in AI-first world. Some training PMs in Markdown.
+- 🟢 `[2026-02]` [Harvard: Junior Employment Declines Sharply at AI-Adopting Firms](https://papers.ssrn.com/sol3/papers.cfm?abstract_id=5425555) - Studied job postings at AI-adopting vs non-adopting firms. Junior roles drop; senior unchanged.
+- 🟢 `[2026-02]` [Microsoft ACM: AI Boost for Seniors, AI Drag for Juniors](https://dl.acm.org/doi/10.1145/3779312) - Azure CTO: "hot topic in all customer engagements — they all say they see it."
+- 🔵 `[2026-02]` [Thomas Dohmke (ex-GitHub CEO): AI Native Is the New Cloud Native](https://newsletter.pragmaticengineer.com/p/the-future-of-software-engineering-with-ai) - Building AI-native startup Entire.io. Agents as "sparring partners" that make remote work advantageous again.
 
 ### Enterprise & On-Prem Delivery
 
@@ -321,6 +343,7 @@ Most awesome lists organize by tool category. This one organizes by **SDLC phase
 
 - 🟢 `[2026-01]` [Vibe Coding Kills Open Source](https://arxiv.org/abs/2601.15494) - AI agents homogenize library selection, weaken maintainer engagement, threaten OSS sustainability.
 - 🟠 `[2026-02]` [SWE-bench: Claude 1.96% → 74.2% Issue Resolution (2024→2026)](https://www.swebench.com) - Rapid capability improvement crossing usability thresholds.
+- 🟡 `[2026-02]` [Synopsys OSSRA 2026: +30% OSS Components Per App](https://devops.com/ai-fueled-development-pushes-open-source-risk-to-extremes-report/) - AI agents expand dependency graphs. OSS in 98% of audited applications.
 
 ---
 
@@ -354,6 +377,10 @@ A chronological view of key inflection points in the AI-SDLC transformation.
 | 2026-02 | METR: can no longer measure without-AI baseline | Cultural tipping point |
 | 2026-02 | Bloomberg: "Productivity Panic of 2026" | Industry-wide reckoning |
 | 2026-02 | ThoughtWorks Retreat: 10 themes identified | Practitioner consensus forming |
+| 2026-02 | Microsoft ACM: "AI Boost / AI Drag" paper | Senior boost, junior drag formalized |
+| 2026-02 | Harvard: junior hiring drops at AI-adopting firms | Labor market impact quantified |
+| 2026-02 | Faros AI: +91% PR review time at scale | Bottleneck shift measured |
+| 2026-02 | Pragmatic Summit: Atlassian teams at zero hand-written code | AI-native org milestone |
 
 ---
 
