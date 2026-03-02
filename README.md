@@ -62,6 +62,12 @@ Most awesome lists organize by tool category. This one organizes by **SDLC phase
   - [Roles & Career Evolution](#roles--career-evolution)
   - [Enterprise & On-Prem Delivery](#enterprise--on-prem-delivery)
   - [Open Source Ecosystem Impact](#open-source-ecosystem-impact)
+- [Building Software for Agents](#building-software-for-agents)
+  - [The Agent-Native Thesis](#the-agent-native-thesis)
+  - [Protocols & Standards](#protocols--standards)
+  - [Agent-Native Architecture](#agent-native-architecture)
+  - [Agent Commerce & Pricing](#agent-commerce--pricing)
+  - [Agent-to-Agent Ecosystems](#agent-to-agent-ecosystems)
 - [Frameworks & Maturity Models](#frameworks--maturity-models)
 - [Timeline](#timeline)
 - [Contributing](#contributing)
@@ -698,6 +704,196 @@ Most awesome lists organize by tool category. This one organizes by **SDLC phase
 
 ---
 
+## Building Software for Agents
+
+*The next wave: software where the primary user is an AI agent, not a human. This fundamentally changes how software is designed, priced, and delivered.*
+
+### The Agent-Native Thesis
+
+> *"Humans will not buy software, agents will."* — Jerry Murdock, Co-Founder of Insight Partners ($90B AUM), [20VC Podcast, Feb 2026](https://podcasts.apple.com/us/podcast/the-twenty-minute-vc-20vc-venture-capital-startup/id958230465?i=1000752063511)
+
+- 🟠 `[2026-02]` [20VC: Jerry Murdock — Why Cursor is Dead, Systems of Record Become Valueless Databases with Agents](https://podcasts.apple.com/us/podcast/the-twenty-minute-vc-20vc-venture-capital-startup/id958230465?i=1000752063511) - Insight Partners co-founder ($90B AUM) argues agents will buy and consume software autonomously. Systems of record become valueless databases. "An AI tsunami is coming."
+
+  <details><summary>Key claims from the podcast</summary>
+
+  - **"Humans will not buy software, agents will"** (at 21:04) — the purchasing decision shifts from human evaluation to agent selection based on API quality, latency, and outcome delivery
+  - **Systems of record (CRMs, ERPs) become "valueless databases"** — the value moves from storing data to acting on it; agents don't need dashboards
+  - **"Cursor is dead"** — standalone coding tools will be absorbed into agentic platforms; the IDE as we know it is transitional
+  - **End of tech private equity?** — PE bought SaaS for predictable recurring revenue; agent-native pricing (per-outcome) breaks the LBO model
+  - Insight Partners portfolio includes 800+ software companies — Murdock sees this across the entire portfolio
+  - **Implication for SDLC:** if your software's primary user becomes an agent, the entire build/test/deploy chain needs to optimize for API quality, documentation parsability, and outcome measurability — not UI/UX
+
+  </details>
+
+- 🟠 `[2026-02]` [BotBorne: AI Agents vs. Traditional SaaS — Why the Software Model Is Dying in 2026](https://www.botborne.com/blog/ai-agents-vs-saas-2026.html) - Comprehensive analysis of SaaS categories being replaced by agents. "Service as Software" inverts the model.
+
+  <details><summary>The SaaS → Agent inversion</summary>
+
+  **The paradox:** average company uses 130 SaaS apps, average worker switches between 13/day. Despite billions spent, actual productivity gains modest — because SaaS tools are still tools. Agents do the work.
+
+  **SaaS categories being replaced:**
+  | SaaS Category | Agent Replacement | Disruption |
+  |--------------|-------------------|-----------|
+  | Customer Support (Zendesk) | Sierra, Decagon, Forethought | Agents resolve issues, not just route tickets |
+  | CRM ($300/seat Salesforce) | 11x, Artisan, Clay | Agents handle prospecting + CRM updates |
+  | Marketing Automation (HubSpot) | Campaign agents | Single instruction replaces 47-step workflows |
+  | Accounting (QuickBooks) | Digits, Puzzle | Continuous bookkeeping vs monthly close |
+  | Project Management (Jira) | Orchestration agents | Break down objectives, assign, adjust timelines |
+  | Recruiting (Greenhouse) | AI hiring agents | Source, screen, schedule entire pipeline |
+
+  **New pricing models:**
+  - **Per-outcome:** pay per resolved ticket, per qualified lead
+  - **Per-agent:** subscribe to an AI "worker" at fraction of human cost
+  - **Revenue share:** agent takes % of value created
+  - **Consumption-based:** pay for compute/tokens consumed
+
+  **What SaaS survives:** systems of record (databases agents interact with), creative tools (human taste), collaboration (human-to-human), developer tools (building the agents).
+
+  **Incumbent dilemma:** Salesforce can't fully embrace agents without cannibalizing $300/seat revenue. Agentforce is positioned as "augmenting users, not replacing them" — classic innovator's dilemma.
+
+  </details>
+
+- 🔵 `[2026-02]` [Brian Christner: The Rise of Agent-to-Agent Apps](https://brianchristner.io/the-rise-of-agent-to-agent-apps/) - SaaS transforms from customer experience portals to data providers for agents. Agent-to-agent marketplaces emerging.
+
+  <details><summary>Key insights</summary>
+
+  - Current apps (email, CRM, etc.) are built for human consumption and **actively try to prevent bots/agents from using them**
+  - Example: AgentMail — API platform giving agents their own inboxes. Two agents emailing each other to complete tasks.
+  - **SaaS will transform from customer experience portals to data providers for agents** — instead of charging per user, charge agents for data access
+  - **Agent-to-agent marketplaces coming:** imagine your agent with a wallet and a goal — each step in the journey requires a transaction fee
+  - **Martin Fowler warning:** agents with email access create massive security surface — personal data, doctor appointments, tax authorities
+  - Community guardrails needed before delegating personal lives to agents
+
+  </details>
+
+- 🔵 `[2025-04]` [Shopify CEO Tobi Lütke: "Prove AI can't do the job before asking for headcount"](https://x.com/tobi/status/1909251946235437514) - Shopify mandates reflexive AI usage as baseline expectation. Must demonstrate why AI can't handle work before hiring.
+
+- 🟡 `[2026-02]` [Salesforce Q4 2026: Agentforce Drives Revenue Beat](https://markets.financialcontent.com/stocks/article/marketminute-2026-2-25-salesforce-q4-2026-earnings-agentic-ai-drives-revenue-beat-and-enterprise-transformation) - 180+ orgs replaced legacy ITSM with Agentforce. Multi-agent adoption projected +67% by 2027.
+
+  <details><summary>Salesforce's bet</summary>
+
+  - **Agentforce** launched late 2024, transitioning from "copilots" to autonomous agents
+  - **180 organizations** replaced legacy support tools (ServiceNow, etc.) with Agentforce IT Service
+  - Spring '26 release: **Agentforce Builder** — build, test, refine agents in conversational workspace
+  - Multi-agent adoption projected to **surge 67% by 2027** (Salesforce connectivity report)
+  - The tension: Salesforce's $300/seat model vs. agents replacing seats. Currently positioning as augmentation, not replacement.
+
+  </details>
+
+### Protocols & Standards
+
+*The infrastructure layer enabling agents to consume software and talk to each other.*
+
+- 🔵 `[2024-11]` [Anthropic: Model Context Protocol (MCP)](https://modelcontextprotocol.io/) - Open standard for connecting AI agents to data systems, tools, and services. "USB-C for AI" — one protocol instead of N integrations.
+
+  <details><summary>How MCP works</summary>
+
+  - **Announced by Anthropic Nov 2024** as open standard
+  - Replaces "N×M integration problem" — instead of every AI tool building custom connectors to every data source, one standardized protocol
+  - **Architecture:** MCP Hosts (AI apps) → MCP Clients → MCP Servers (data/tool providers)
+  - Servers expose: **Resources** (data), **Tools** (actions), **Prompts** (templates)
+  - Already adopted by: Cursor, Windsurf, Sourcegraph, Claude Desktop, and growing ecosystem
+  - **Outreach joined MCP ecosystem Feb 2026** — connecting CRM data to AI agents across revenue workflows
+  - Enables agents to discover and consume software capabilities without pre-programmed integrations
+  - Academic paper: [Convergence of Schema-Guided Dialogue and MCP](https://arxiv.org/html/2602.18764) — formalizes MCP as "deterministic, auditable LLM-agent interaction"
+
+  </details>
+
+- 🔵 `[2025-04]` [Google: Agent2Agent (A2A) Protocol](https://google.github.io/A2A/) - Open standard for agents from different frameworks/vendors/clouds to communicate, delegate tasks, and collaborate without sharing internal state.
+
+  <details><summary>MCP vs A2A — complementary, not competing</summary>
+
+  - **MCP** = agent ↔ tool/data (vertical: agent consuming software)
+  - **A2A** = agent ↔ agent (horizontal: agents collaborating)
+  - A2A uses HTTP + JSON-RPC + Server-Sent Events
+  - Agents don't share internal state, memory, or tools — only communicate through the protocol
+  - **DeepLearning.AI** already offers a course on building A2A-compliant agents
+  - Supported frameworks: Google ADK, LangGraph, BeeAI
+  - Google Cloud dev guide: [Production-Ready AI Agents](https://cloud.google.com/blog/products/ai-machine-learning/a-devs-guide-to-production-ready-ai-agents/)
+  - **Combined vision:** A2A for agent collaboration + MCP for agent-tool access = complete agent interoperability layer
+
+  </details>
+
+- 🟢 `[2026-02]` [OWASP Top 10 for Agentic Applications 2026](https://genai.owasp.org/resource/owasp-top-10-for-agentic-applications-for-2026/) - Globally peer-reviewed framework for most critical security risks facing autonomous AI systems. 100+ industry contributors.
+
+### Agent-Native Architecture
+
+*How to build software that agents can consume, not just humans.*
+
+- 🔵 `[2026-02]` [Every.to: How to Build Agent-Native — Lessons From Four Apps](https://every.to/source-code/how-to-build-agent-native-lessons-from-four-apps) - "Claude Code in a trench coat." Three principles: Parity (agent can do everything user can), Granularity (atomic tools), Composability (agent combines tools freely).
+
+  <details><summary>Agent-native architecture principles</summary>
+
+  - **Traditional software:** pre-written code dictates every action. Click "sort by date" → sorts by date.
+  - **Agent-native:** define tools (small actions) + skills (plain English instructions). Agent decides which tools to use and how to combine them.
+  - **Three principles:**
+    1. **Parity:** whatever the user can do, the agent can do. Every click/form/interaction available to both.
+    2. **Granularity:** tools should be atomic — small, single-purpose. Features live at the skill level (plain text).
+    3. **Composability:** atomic tools + freely combinable skills = app does things nobody explicitly designed.
+  - **Trade-offs:** slower (agent reasons each request), more expensive (burns tokens), less predictable (same request ≠ same result)
+  - **Key insight:** simpler tools → smarter results. Claude Code is powerful because its core tool (terminal commands) can do almost anything.
+  - **Safety rule:** safeguards belong in the tools, not the instructions. You can ask AI to be careful, but it might ignore you. Irreversible actions (deleting files) must be constrained at the tool level.
+  - Inference costs dropping ~80% every few months — architecture becomes cheaper over time
+
+  </details>
+
+- 🔵 `[2025-10]` [Praveen Manvi: AI Agent-Native Development — A Practical Protocol](https://pmanvi.medium.com/beyond-copilots-building-for-the-autonomous-future-a-practical-protocol-for-agent-native-ea067a26c205) - Two-stage protocol: Stage 1 (API-first backend, Swagger as blueprint for both humans and agents), Stage 2 (thin frontend reflecting the API).
+
+  <details><summary>The protocol</summary>
+
+  - **Be Agentic:** expose APIs that are actionable, contextual, and well-documented
+  - **Be Agent-Native:** build software as a network of agents. Expose actions, not just data.
+  - **Monetize Outcomes, Not Usage:** seat-based pricing irrelevant when agents are users
+  - **Vanity AI vs Value AI:**
+    - Vanity: chat features bolted onto UIs — novel but not transformative
+    - Value: AI embedded in critical workflows driving measurable business outcomes
+  - **Stage 1:** prompt-driven design → backend generation → OpenAPI spec as single source of truth. The API contract serves as the MCP server.
+  - **Stage 2:** feed Swagger spec to AI agent + persona requirements → auto-generate frontend aligned with backend
+  - **Results:** prototype in hours not weeks; no frontend/backend mismatch; APIs clean and agent-ready
+
+  </details>
+
+- 🔵 `[2026-02]` [Futurum: Entire's Agent-Native Platform as Blueprint](https://futurumgroup.com/insights/is-entires-agent-native-platform-the-blueprint-for-software-development/) - Thomas Dohmke's Entire.io (ex-GitHub CEO). Google's Developer Knowledge API and Gemini CLI hooks externalize agent context and governance.
+
+- 🔵 `[2026-02]` [WebProNews: The Agent-Native Revolution](https://www.webpronews.com/the-agent-native-revolution-how-ai-agents-are-rewriting-the-rules-of-software-development/) - Developer tools as vanguard of agent-native transformation. GitHub Copilot, Cursor interacting through APIs rather than simulated keystrokes.
+
+### Agent Commerce & Pricing
+
+*How software gets bought, priced, and paid for when agents are the buyers.*
+
+- 🔵 `[2026-02]` [Stripe: Agentic Commerce Suite + x402 Protocol](https://crypto.news/stripe-taps-base-ai-agent-x402-payment-protocol-2026/) - AI agents can make instant USDC micropayments for APIs, data, and digital services. PaymentIntents API charges agents for API usage, MCP calls, and HTTP requests.
+
+  <details><summary>How agent payments work</summary>
+
+  - **Stripe's x402 protocol on Base (Coinbase L2):**
+    1. Create a PaymentIntent
+    2. Stripe generates unique deposit address per transaction
+    3. Return address to agent, instruct to send funds
+    4. Track via API/webhook/Dashboard
+    5. Funds settle in default balance
+  - **Use cases:** micropayments for API calls, data access, model inference, digital services
+  - **Stripe's vision (Annual Letter):** three stages of agentic commerce:
+    1. Agent-assisted (human approves each purchase)
+    2. Agent-directed (human sets rules, agent executes)
+    3. **Promptless** (agent anticipates needs, sends notification of completed purchases)
+  - **Implication:** software pricing shifts from subscription → per-API-call micropayments. Every HTTP endpoint becomes a billable transaction.
+
+  </details>
+
+- 🟠 `[2026-02]` [eMarketer: Stripe Outlines State of Agentic Payments](https://www.emarketer.com/content/stripe-appraises-agentic-commerce-landscape-2025-annual-letter) - Final stage: "promptless agentic purchases" — AI agents anticipate orders, send notifications of completed purchases.
+
+### Agent-to-Agent Ecosystems
+
+*The emerging world of agents consuming other agents' services.*
+
+- 🔵 `[2026-02]` [Martin Fowler: Agentic Email — The Danger](https://martinfowler.com/bliki/AgenticEmail.html) - Warning about agents with email access: personal data, doctor appointments, tax authorities. Guardrails needed before delegating personal lives.
+
+- 🔵 `[2026-02]` [Brian Christner: Agent-to-Agent Marketplaces](https://brianchristner.io/the-rise-of-agent-to-agent-apps/) - Agents with wallets shopping for capabilities. Each step in a workflow = a transaction fee.
+
+- 🟡 `[2026-02]` [Salesforce: Multi-Agent Adoption to Surge 67% by 2027](https://www.salesforce.com/news/stories/connectivity-report-announcement-2026/) - Unified architecture key to success. Enterprises racing toward multi-agent orchestration.
+
+---
+
 ## Frameworks & Maturity Models
 
 *Models for assessing organizational AI-SDLC maturity.*
@@ -778,6 +974,9 @@ A chronological view of key inflection points in the AI-SDLC transformation.
 | 2026-02 | Harvard: junior hiring drops at AI-adopting firms | Labor market impact quantified |
 | 2026-02 | Faros AI: +91% PR review time at scale | Bottleneck shift measured |
 | 2026-02 | Pragmatic Summit: Atlassian teams at zero hand-written code | AI-native org milestone |
+| 2026-02 | Stripe launches x402 agent payments on Base | Agent commerce infrastructure arrives |
+| 2026-02 | Jerry Murdock (Insight Partners): "Agents will buy software" | $90B VC signals SaaS paradigm shift |
+| 2026-02 | Salesforce: 180 orgs replace legacy ITSM with Agentforce | Enterprise agent adoption accelerates |
 
 ---
 
