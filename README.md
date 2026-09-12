@@ -107,6 +107,18 @@ Most awesome lists organize by tool category. This one organizes by **SDLC phase
 
   </details>
 
+- 🟡 `[2026-08]` [JetBrains Developer Ecosystem Survey 2026: AI Coding Agent Adoption Hits 90%](https://blog.jetbrains.com/research/2026/08/ai-coding-agent-adoption-2026/) - JetBrains' tenth annual survey (15,000+ developers, May–Jul 2026) finds **90% of professional developers use AI coding agents weekly**, 68% daily. **Claude Code dominates at 39% adoption** globally (47% in US), overtaking GitHub Copilot (21%, down from 29%). Codex grew 5× to 16%. OpenCode (open-source) reached 7% with 42% mindshare. Cursor declined from 18% to 12%.
+
+  <details><summary>Key findings</summary>
+
+  - **90%** of professional developers use AI coding agents at work weekly; **68%** daily
+  - **Claude Code** leads globally at **39%** (47% in US), overtaking GitHub Copilot
+  - GitHub Copilot declined from **29% → 21%**; Cursor from **18% → 12%**
+  - Codex grew **5×** to 16%; OpenCode reached 7% with 42% mindshare at 160K+ GitHub stars
+  - First major survey to show Claude Code as the dominant AI coding tool by adoption share
+
+  </details>
+
 - 🟡 `[2026-06]` [Gartner Magic Quadrant for Enterprise AI Coding Agents 2026](https://www.gartner.com/en/newsroom/press-releases/2026-05-20-gartner-says-the-market-for-enterprise-ai-coding-agents-is-entering-a-new-phase-of-expansion-and-competitive-realignment) - Market sized at **$9.8–11.0B annualized** (Apr 2026). **Leaders:** GitHub Copilot (3rd year), OpenAI Codex, Cursor. Gartner: *"Leading requires more than product momentum"* — governance, security, and workflow integration now differentiate.
 
 - 🟡 `[2026-05]` [Spotify Investor Day: 96% AI Adoption, +76% Coding Productivity](https://newsroom.spotify.com/2026-05-21/investor-day-recap/) - Chief architect reveals **96% of engineers code with AI**, PR frequency up 60%, coding productivity **+76% YoY**. Ships **~4,500 production changes daily**, two-thirds AI-assisted. Unveiled **"Honk"**, its internal AI coding agent that automates maintenance. One of the most concrete large-scale productivity datasets published to date.
@@ -1095,6 +1107,8 @@ Most awesome lists organize by tool category. This one organizes by **SDLC phase
 
 ### Organizational Impact
 
+- 🟡 `[2026-08]` [McKinsey Global Tech Agenda 2026: AI Is Top Investment Priority](https://www.mckinsey.com/capabilities/mckinsey-technology/our-insights/mckinsey-global-tech-agenda-2026) - AI has become the **#1 technology investment priority** ahead of cybersecurity and infrastructure modernization, yet nearly a third of organizations still report AI-related talent and integration gaps. The challenge has shifted from "should we use AI" to "how do we make AI work inside the business."
+
 - 🟡 `[2026-07]` [Gartner: 60% of Orgs Will Adopt Smaller Engineering Teams by 2029](https://www.gartner.com/en/newsroom/press-releases/2026-07-07-gartner-predicts-60-percent-of-organizations-will-adopt-smaller-software-engineering-teams-by-2029) - Gartner predicts smaller AI-augmented engineering teams will jump from **15% (2026) to 60% by 2029**. Also forecasts 75% of developers will "orchestrate rather than code" by end of 2026. Introduces **"FinOps for Agentic AI"** as a new category.
 
 - 🟡 `[2026-07]` [Gartner Hype Cycle: "AI-Native Software Engineering" Debuts](https://www.gartner.com/en/documents/8000669) - **"AI-native software engineering"** enters the Gartner Hype Cycle for the first time. Agentic AI at Peak of Inflated Expectations. Only **17% of orgs have deployed AI agents**, but 60%+ plan to within 2 years. Agent-washing flagged as explicit market problem.
@@ -1708,6 +1722,8 @@ Most awesome lists organize by tool category. This one organizes by **SDLC phase
 
 - 🟢 `[2026-07]` [arXiv: Why AI Agent PRs Remain Unmerged — 8,106 PRs Analyzed](https://huggingface.co/papers?q=AI-human+collaboration) - Analysis of 8,106 fix-related PRs from five AI coding agents (AIDEV POP dataset) catalogs **12 failure reasons** why agent-generated contributions are closed without merging. ~100 person-hours of manual qualitative analysis. Key signal: AI agents can generate fixes but struggle with **project-specific conventions, test expectations, and maintainer trust**.
 
+- 🔵 `[2026-08]` [Stackademic: AI Agents Accelerate Technical Debt Creation](https://blog.stackademic.com/your-ai-coding-agent-is-making-you-faster-your-codebase-is-paying-the-price-7800c51715e3) - Argues the real risk of AI coding agents isn't bad code but **plausible code generated faster than teams can evaluate long-term consequences**. AI moves the bottleneck from writing to understanding and maintaining. Teams close tickets faster but accumulate architectural debt that surfaces later.
+
 - 🟢 `[2026-07]` [arXiv: IDE Coding Agents — Workflow-Level Jailbreak Construction](https://arxiv.org/abs/2607.03968) - Security paper shows AI coding agents refuse harmful prompts in direct chat (**8/816 success**), but the same prompts succeed **816/816 times** when spread across normal software development workflow stages. Tested on Claude Sonnet 4.6, Haiku 4.5, Gemini 3.1 Pro, Gemini 3.5 Flash. **Conversational safety benchmarks substantially overstate deployed coding agent safety.**
 
 - 🔵 `[2026-07]` ["Verification Debt" Gains Traction as Named Concept](https://techintelix.com/verification-debt/) - Formalizes **"verification debt"**: the accumulated burden when code is produced faster than an organization can verify it is correct, secure, and maintainable. Distinct from tech debt — a system can look clean and still carry massive verification debt. AI amplifies this because generation scales while human review capacity doesn't.
@@ -1759,6 +1775,8 @@ Most awesome lists organize by tool category. This one organizes by **SDLC phase
 - [CodeRabbit](https://coderabbit.ai) - AI code review for pull requests.
 - [Pixee](https://pixee.ai) - Finds security and quality issues, opens merge-ready PRs.
 - 🔵 `[2026-05]` [Stack Overflow: "Coding Agents Are Giving Everyone Decision Fatigue"](https://stackoverflow.blog/2026/05/21/coding-agents-are-giving-everyone-decision-fatigue/) - AI coding tools are shifting the bottleneck from code *production* to code **review and judgment**. One dev producing 7× more code overwhelms peer review. Anthropic's Cat Wu acknowledges that even with human judgment, *"errors can happen because we can get a little sloppy."* Organizations reconfiguring the SDLC to ease review intensity.
+
+- 🔵 `[2026-08]` [Kodus: Redefining Code Quality When Humans Stop Reading Code](https://kodus.io/en/what-does-code-quality-mean-in-the-age-of-ai) - Practitioner analysis of how AI agents behave like **"extremely confident junior developers"** — they know patterns but lack context about business rules, incident history, and organizational knowledge. Reports teams going from 10 to 24 merged PRs/dev/month after adopting agentic workflows, but warns that code that runs is a very low bar for production readiness.
 
 - 🟢 `[2026-07]` [HuggingFace AIDev Dataset: Large-Scale Empirical Analysis of Agentic vs Human PRs](https://huggingface.co/papers?q=Coding+Agents) - Analysis of **24,014 merged agentic PRs** (440,295 commits) vs **5,081 merged human PRs** (23,242 commits), examining integration outcomes, latency, and factors that hinder successful merging. One of the largest empirical datasets comparing AI agent and human code contributions.
 
@@ -2171,6 +2189,8 @@ Most awesome lists organize by tool category. This one organizes by **SDLC phase
 - 🔵 `[2026-02]` [ThoughtWorks: Reframe as "Agent Experience"](https://www.thoughtworks.com/content/dam/thoughtworks/documents/report/tw_future%20_of_software_development_retreat_%20key_takeaways.pdf) - Wallets open faster for agent experience. Overlap with developer experience is nearly complete.
 
 - 🟡 `[2026-04]` [DORA 2026: Elite Teams + Platform Engineering See 40% Fewer Failures](https://www.ai-infra-link.com/how-platform-engineering-cuts-downtime-by-40-in-2026/) - Platform engineering + AI-assisted DevOps continues to separate elite performers. Elite teams using platform engineering see 40% fewer environment-related failures.
+
+- 🔵 `[2026-08]` [TXI: AI Coding Assistants Learned from an Inaccessible Internet](https://txidigital.com/insights/inaccessible-ai-coding) - AI coding tools systematically produce **inaccessible interfaces** because they learned from web content that is overwhelmingly not accessible. A blind engineer's test of Claude Code produced interfaces with inaccessible buttons, cluttered regions, and structural problems. Teams need to **embed accessibility guidance into AI workflows** rather than relying on better prompts alone.
 
 - 🟡 `[2026-06]` [Gartner Hype Cycle for Platform Engineering 2026](https://www.gartner.com/en/documents/hype-cycle-platform-engineering-2026) - Platform engineering reaches "Slope of Enlightenment." AI-assisted developer portals, self-service infrastructure, and agent-ready platforms now tracked as distinct innovation profiles. Key signal: platforms must serve both human developers and AI agents.
 
@@ -3134,6 +3154,12 @@ A chronological view of key inflection points in the AI-SDLC transformation.
 | 2026-07-17 | METR follow-up study collapsed | 30-50% refused no-AI control group; controlled measurement "nearly impossible" |
 | 2026-07-17 | Anthropic internal: 67% more PRs, 27% novel work | 132 engineers, 200K transcripts; bottleneck shifted to verification |
 | 2026-07-17 | HBS: AI closes confidence gap, not competence gap | Non-experts underperform by 13% on execution despite equal planning |
+
+| 2026-08-20 | JetBrains Developer Ecosystem Survey 2026 | 90% weekly AI agent adoption; Claude Code leads at 39% globally |
+| 2026-08-20 | Stackademic: AI agents accelerate technical debt | Plausible code faster than teams can evaluate consequences |
+| 2026-08-20 | Kodus: code quality when humans stop reading code | AI agents = "confident junior devs"; 10→24 PRs/dev/month but low bar |
+| 2026-08-20 | TXI: AI coding tools produce inaccessible interfaces | Training data bias → systematic accessibility failures |
+| 2026-08-20 | McKinsey Global Tech Agenda 2026 | AI is #1 investment priority; talent/integration gaps persist |
 
 ---
 
